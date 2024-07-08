@@ -1,0 +1,22 @@
+class Solution {
+public:
+    bool check(vector<int>& nums) {
+        int count = 0;
+        int sz = nums.size();
+        for(int i=1; i<sz; i++){
+            if(nums[i-1]>nums[i]){
+                count++;
+            }
+        }
+        if(nums[sz-1]>nums[0])count++;
+        return (count<=1)? true : false; 
+        
+    }
+};
+
+
+/*
+    Intution :
+    Find how many times, the array is breaking the ascending order.
+   If it is breaking just once or not even once then it is sorted so return true, otherwise false.
+*/
